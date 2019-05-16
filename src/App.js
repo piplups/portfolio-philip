@@ -1,4 +1,6 @@
 import React, { Fragment } from 'react';
+import { Route } from 'react-router-dom';
+import { ImplicitCallback } from '@okta/okta-react';
 import {
   CssBaseline, // this component will add some nice defaults to the page
                // so we no longer need the default src/index.css and src/App.css
@@ -22,7 +24,8 @@ const App = ({ classes }) => (
     <CssBaseline />
     <AppHeader />
     <main className={classes.main}>
-      <Home />
+      <Route exact path="/" component={Home} />
+      <Route path="/implicit/callback" component={ImplicitCallback} />
     </main>
   </Fragment>
 );
